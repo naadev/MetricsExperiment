@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BasketBusiness
 {
-    public class ServiceFactory
+    public static class ServiceFactory
     {
         static internal StandardKernel Kernel { get; set; } = new StandardKernel(new BasketModule());
         public static I GetA<I>() => Kernel.Get<I>();
