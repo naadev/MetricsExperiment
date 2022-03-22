@@ -21,8 +21,6 @@ jobs:
       run: dotnet restore MetricsExperiment/MetricsExperiment.sln
     - name: Build
       run: dotnet build MetricsExperiment/MetricsExperiment.sln --no-restore
-    - name: Test
-      run: dotnet test MetricsExperiment/MetricsExperiment.sln --no-build --verbosity normal
     - name: Codacy Analysis CLI
       # You may pin to the exact commit or the version.
       # uses: codacy/codacy-analysis-cli-action@f38648320929161d81646834fbee4d75f6502aea
@@ -33,3 +31,6 @@ jobs:
         # Run StaticCheck. Possible values (true|false)
         run-staticcheck: true
         # Path to a file containing the output of Clang Tidy.
+    - name: Test
+      run: dotnet test MetricsExperiment/MetricsExperiment.sln --no-build --verbosity normal
+
