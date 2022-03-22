@@ -27,9 +27,6 @@ jobs:
       uses: codacy/codacy-analysis-cli-action@4.0.2
       with:
         api-token: ${{secrets.CODACY_API_TOKEN}}    
-        run-docker-tools: "true"
-        run-gosec: "true"
-        run-staticcheck: "true"
     - name: Test
       run: dotnet test MetricsExperiment/MetricsExperiment.sln --no-build --verbosity normal
 
