@@ -23,3 +23,13 @@ jobs:
       run: dotnet build MetricsExperiment/MetricsExperiment.sln --no-restore
     - name: Test
       run: dotnet test MetricsExperiment/MetricsExperiment.sln --no-build --verbosity normal
+    - name: Codacy Analysis CLI
+      # You may pin to the exact commit or the version.
+      # uses: codacy/codacy-analysis-cli-action@f38648320929161d81646834fbee4d75f6502aea
+      uses: codacy/codacy-analysis-cli-action@4.0.2
+      with:
+        api-token: ${{secrets.CODACY_API_TOKEN}}
+        run-gosec: true
+        # Run StaticCheck. Possible values (true|false)
+        run-staticcheck: true
+        # Path to a file containing the output of Clang Tidy.
